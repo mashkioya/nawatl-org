@@ -19,5 +19,21 @@ Route::get('/tlapowalli/', function () {
 Route::get('/tlapowalli/{num}', 'NumsController@convert');	
 
 Route::get('/n2dic/', function () {
-    return view('n2dic');
+	$term = request('term');
+	$lang = request('lang');
+
+    return view('n2dic', [
+    	'term' => $term,
+    	'lang' => $lang
+    ]);
+});
+
+Route::get('/nsdic/', function () {
+	$term = request('term');
+	$lang = request('lang');
+
+    return view('nsdic', [
+    	'term' => $term,
+    	'lang' => $lang
+    ]);
 });
