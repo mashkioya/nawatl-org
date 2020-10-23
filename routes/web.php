@@ -28,12 +28,4 @@ Route::get('/n2dic/', function () {
     ]);
 });
 
-Route::get('/nsdic/', function () {
-	$term = request('term');
-	$lang = request('lang');
-
-    return view('nsdic', [
-    	'term' => $term,
-    	'lang' => $lang
-    ]);
-});
+Route::get('/nsdic/', 'NahEntryController@show');
